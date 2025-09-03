@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Google Developer Student Clubs – DYPCOE (Replica Template)</title>
+  <meta name="description" content="Community of student developers. Learn, build, grow." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --panel: #111318;
+      --panel-2: #0e1015;
+      --text: #e8eef9;
+      --muted: #a7b3c6;
+      --brand-blue: #4285F4;
+      --brand-red: #EA4335;
+      --brand-yellow: #FBBC05;
+      --brand-green: #34A853;
+      --accent: var(--brand-blue);
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+   body {
+  margin: 0;
+  padding: 0;
+  background-image: url("301.png"); /* path to your file */
+  background-size: cover;       /* makes it cover full screen */
+  background-position: center;  /* keeps it centered */
+  background-repeat: no-repeat; /* prevents tiling */
+  font-family: Arial, sans-serif;
+}
+
+
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: radial-gradient(1200px 800px at 70% -10%, rgba(66,133,244,.15), transparent 60%), radial-gradient(900px 600px at -10% 10%, rgba(52,168,83,.15), transparent 60%), var(--bg); }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1200px, 92vw); margin: 0 auto; }
+    .badge { display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .6rem; border-radius:999px; background: rgba(255,255,255,.06); color: var(--muted); font-size:.85rem; border:1px solid rgba(255,255,255,.08); }
+    /* NAV */
+    .nav { position: sticky; top:0; z-index: 50; backdrop-filter: saturate(140%) blur(10px); background: rgba(11,12,16,.55); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .nav .row { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding: .9rem 0; }
+    .logo { display:flex; align-items:center; gap:.7rem; font-weight:700; letter-spacing:.2px; }
+    .mark { display:inline-grid; grid-template-columns:repeat(2, 12px); gap:8px; }
+    .mark span { width:12px; height:12px; border-radius:4px; }
+    .mark .b { background: var(--brand-blue);} .mark .r{background:var(--brand-red);} .mark .y{background:var(--brand-yellow);} .mark .g{background:var(--brand-green);} 
+    .nav a.link { color: var(--muted); font-weight:500; padding:.6rem .9rem; border-radius:10px; }
+    .nav a.link:hover { color: var(--text); background: rgba(255,255,255,.06); }
+    .nav .links { display:flex; gap:.25rem; align-items:center; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.65rem 1rem; border-radius:12px; background: linear-gradient(135deg, var(--brand-blue), var(--brand-green)); color:white; font-weight:600; border:0; cursor:pointer; box-shadow: var(--shadow); }
+    .btn-outline { background: transparent; border:1px solid rgba(255,255,255,.14); color: var(--text);} 
+    .hamburger { display:none; background:none; border:0; color:var(--text); font-size:1.2rem; }
+    @media (max-width: 900px){ .nav .links{ display:none; } .hamburger{ display:inline-flex;} }
+
+    /* HERO */
+    .hero { padding: 6rem 0 4rem; position:relative; }
+    .hero .grid { display:grid; grid-template-columns: 1.2fr 1fr; gap:2.5rem; align-items:center; }
+    .hero h1 { font-size: clamp(2.2rem, 2.6vw + 1.6rem, 4rem); line-height:1.05; margin:.6rem 0 1rem; letter-spacing:-.02em; }
+    .hero p { color: var(--muted); font-size:1.1rem; }
+    .hero .cta { display:flex; gap: .8rem; margin-top:1.6rem; flex-wrap:wrap; }
+    .hero .card { padding:1.2rem; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .hero .illus { aspect-ratio: 4/3; border-radius: 22px; position:relative; overflow:hidden; background: linear-gradient(135deg, rgba(66,133,244,.15), rgba(234,67,53,.15)), url('https://images.unsplash.com/photo-1523246206020-09d0def993a6?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; }
+    .hero .illus::after{ content:""; position:absolute; inset:0; background: radial-gradient(500px 300px at 20% 20%, rgba(251,188,5,.35), transparent 60%); }
+
+    /* SECTIONS */
+    section { padding: 4rem 0; }
+    .section-head { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1.6rem; }
+    .section-head h2 { font-size: clamp(1.6rem, 1.1vw + 1.2rem, 2.2rem); margin:0; }
+    .muted { color: var(--muted); }
+
+    /* EVENTS */
+    .cards { display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow); }
+    .card .media { aspect-ratio:16/9; background:#0b0e14 center/cover no-repeat; }
+    .card .body { padding:1rem 1.1rem 1.2rem; }
+    .chip { display:inline-flex; align-items:center; gap:.4rem; padding:.2rem .55rem; font-size:.78rem; border-radius:999px; border:1px solid rgba(255,255,255,.14); color: var(--muted); }
+    @media (max-width: 900px){ .cards{ grid-template-columns:1fr; } .hero .grid{ grid-template-columns:1fr; } }
+
+    /* TEAM */
+    .team { display:grid; grid-template-columns: repeat(4, 1fr); gap:1rem; }
+    .person { text-align:center; padding:1rem; border-radius:14px; border:1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); }
+    .avatar { width:84px; height:84px; border-radius:999px; margin:0 auto .6rem; background: #151923 center/cover no-repeat; border:2px solid rgba(255,255,255,.12); }
+    .person .role { color: var(--muted); font-size:.9rem; }
+    @media (max-width: 900px){ .team{ grid-template-columns: repeat(2, 1fr); } }
+
+    /* FOOTER */
+    footer { padding: 3rem 0 4rem; border-top: 1px solid rgba(255,255,255,.06); background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); }
+    .footgrid { display:grid; grid-template-columns: 2fr 1fr 1fr; gap:2rem; }
+    .footgrid a{ color: var(--muted); }
+    .footgrid a:hover{ color: var(--text); }
+    @media (max-width: 900px){ .footgrid{ grid-template-columns:1fr; } }
+
+    /* MOBILE MENU */
+    .mobile-menu{ display:none; position:fixed; inset:64px 0 0 0; background:rgba(11,12,16,.98); padding:1rem; border-top:1px solid rgba(255,255,255,.06); }
+    .mobile-menu a{ display:block; padding:1rem; border-radius:12px; color: var(--muted); }
+    .mobile-menu a:hover{ background: rgba(255,255,255,.06); color:var(--text); }
+    .mobile-open .mobile-menu{ display:block; }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container row">
+      <div class="logo">
+        <span class="mark" aria-hidden="true">
+          <span class="r"></span><span class="y"></span><span class="b"></span><span class="g"></span>
+        </span>
+        <span>GDSC DYPCOE</span>
+      </div>
+      <div class="links" aria-label="Primary">
+        <a class="link" href="#about">About</a>
+        <a class="link" href="#events">Events</a>
+        <a class="link" href="#projects">Projects</a>
+        <a class="link" href="#team">Team</a>
+        <a class="link" href="#contact">Contact</a>
+        <a class="btn btn-outline" href="#join">Join</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu" id="menuBtn">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="container">
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#events" onclick="closeMenu()">Events</a>
+        <a href="#projects" onclick="closeMenu()">Projects</a>
+        <a href="#team" onclick="closeMenu()">Team</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a class="btn" style="margin:1rem;" href="#join" onclick="closeMenu()">Join the Chapter</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero container">
+    <div class="grid">
+      <div>
+        <span class="badge">Google Developer Student Clubs • DYPCOE</span>
+        <h1>Learn. Build. Grow.<br/>With your campus developer community.</h1>
+        <p>
+          We host workshops, hackathons, study jams, and projects across web, mobile, cloud and AI.
+          Open to learners of all levels.
+        </p>
+        <div class="cta">
+          <a class="btn" href="#events">See upcoming events</a>
+          <a class="btn btn-outline" href="#projects">Browse projects</a>
+        </div>
+        <div class="card" style="margin-top:1.5rem;">
+          <strong>What is GDSC?</strong>
+          <p class="muted" style="margin:.4rem 0 0;">A student-led developer community supported by Google Developers to help peers learn and connect.</p>
+        </div>
+      </div>
+      <div class="illus" role="img" aria-label="Students collaborating at laptops"></div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>About the Chapter</h2>
+        <span class="badge">Community • Mentorship • Impact</span>
+      </div>
+      <p class="muted">We run hands‑on sessions on HTML/CSS/JS, React, Flutter, Firebase, Cloud, ML and more. Members work on real problems, ship projects and present learnings.</p>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section id="events">
+    <div class="container">
+      <div class="section-head">
+        <h2>Upcoming & Recent Events</h2>
+        <a href="#" class="link">View all →</a>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1400&auto=format&fit=crop');"></div>
+          <div class="body">
+            <div class="chip">Workshop • Web</div>
+            <h3>Intro to React + Firebase</h3>
+            <p class="muted">Build a real-time app in 90 minutes. BYOLaptop.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop');"></div>
+          <div class="body">
+            <div class="chip">Hackathon</div>
+            <h3>Campus Hack Day</h3>
+            <p class="muted">Team up, prototype fast, pitch on stage.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1400&auto=format&fit=crop');"></div>
+          <div class="body">
+            <div class="chip">Study Jam</div>
+            <h3>Cloud Essentials</h3>
+            <p class="muted">Hands-on labs with credits and swags.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2>Featured Projects</h2>
+        <span class="badge">Open Source</span>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format&fit=crop');"></div>
+          <div class="body">
+            <h3>Campus Connect</h3>
+            <p class="muted">A platform to share notes, events and opportunities.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1400&auto=format&fit=crop');"></div>
+          <div class="body">
+            <h3>Health Buddy</h3>
+            <p class="muted">Track habits, reminders and wellness insights.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1551281044-8d8d1ae5e9c5?q=80&w=1400&auto=format&fit=crop');"></div>
+          <div class="body">
+            <h3>DevFindr</h3>
+            <p class="muted">Discover teammates by skills and interests.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team">
+    <div class="container">
+      <div class="section-head">
+        <h2>Meet the Team</h2>
+        <a href="#" class="link">All members →</a>
+      </div>
+      <div class="team">
+        <div class="person">
+          <div class="avatar" style="background-image:url('https://i.pravatar.cc/150?img=11');"></div>
+          <div class="name">Alex Sharma</div>
+          <div class="role">Lead</div>
+        </div>
+        <div class="person">
+          <div class="avatar" style="background-image:url('https://i.pravatar.cc/150?img=12');"></div>
+          <div class="name">Nina Patil</div>
+          <div class="role">Web Core</div>
+        </div>
+        <div class="person">
+          <div class="avatar" style="background-image:url('https://i.pravatar.cc/150?img=32');"></div>
+          <div class="name">Ravi Deshmukh</div>
+          <div class="role">Cloud</div>
+        </div>
+        <div class="person">
+          <div class="avatar" style="background-image:url('https://i.pravatar.cc/150?img=36');"></div>
+          <div class="name">Sneha Kulkarni</div>
+          <div class="role">Android</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact & Join</h2>
+        <span class="badge">We’re friendly :)</span>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="body">
+            <h3>Get in touch</h3>
+            <p class="muted">Email: dypcoe.gdsc@example.edu<br/>Instagram: @gdsc_dypcoe</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="body">
+            <h3>Join the chapter</h3>
+            <p class="muted">Fill the interest form and we’ll reach out with onboarding steps.</p>
+            <a class="btn" href="#join">Open form</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="body">
+            <h3>Location</h3>
+            <p class="muted">D. Y. Patil College of Engineering, Akurdi, Pune</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footgrid">
+      <div>
+        <div class="logo" style="margin-bottom:.8rem;">
+          <span class="mark"><span class="r"></span><span class="y"></span><span class="b"></span><span class="g"></span></span>
+          <strong>GDSC DYPCOE</strong>
+        </div>
+        <p class="muted">Student community. Not an official Google product. This is a replica template for demo use.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#events">Events</a><br>
+        <a href="#projects">Projects</a><br>
+        <a href="#team">Team</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="#">Email</a><br>
+        <a href="#">Twitter</a><br>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function closeMenu(){ document.body.classList.remove('mobile-open'); }
+    menuBtn.addEventListener('click', ()=>{ document.body.classList.toggle('mobile-open'); });
+    mobileMenu.querySelectorAll('a').forEach(a=> a.addEventListener('click', closeMenu));
+  </script>
+</body>
+</html>
+
